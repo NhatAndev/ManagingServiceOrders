@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn cày thuê</title>
+    <link rel="stylesheet" href="../libs/css/bootstrap.css">
+    <link rel="icon" type="image/png" sizes="128x128" href="../images/logo/icon-web-hsin.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script src="../libs/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.2/iconify-icon.min.js"></script>
+    <script src="../js/modal.js" defer type="module"></script>
+    <script src="../js/event.js" defer type="module"></script>
+    <script src="../js/index.js" defer type="module"></script>
+    <script src="../js/filter.js" defer type="module"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/keyframe.css">
+    <link rel="stylesheet" href="../css/iconAnimation.css">
+    <link rel="stylesheet" href="../libs/css/animate.min.css">
+</head>
+
+<body>
+    <div class="container-fluid p-0 pe-1">
+        <div class="land-page d-flex">
+            <div class="side-bar-left">
+                <div class="pb-3 pt-3">
+                    <div class="d-flex align-items-center justify-content-center gap-3 side-bar-border">
+                        <img class="side-bar-logo" src="../images/logo/logo-web.webp">
+                        <div class="side-bar-title">
+                            <p class="m-0 p-0 text-white">Hsin support</p>
+                            <p class="m-0 p-0 text-white text-uppercase">Managing Service Order</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-bar-content w-100">
+                    <div class="active-list cursor dashboard-element nav-item mb-3" style="border-radius: 10px;">
+                        <h5 href="#" id="home" class="nav-link side-bar-nav m-0">
+                            <iconify-icon icon="fa:home" class="fs-6 text-white"></iconify-icon>
+                            <span class="ms-3 active-text fw-bold">
+                                Trang chủ
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="nav-item dashboard-element cursor mb-3" style="border-radius: 10px;">
+                        <h5 href="#" id="progress-order" class="nav-link side-bar-nav m-0">
+                            <iconify-icon icon="reicon:progress-bar-filled" class="text-white"></iconify-icon>
+                            <span class="ms-3 fw-bold">
+                                Đơn đang cày
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="nav-item dashboard-element cursor mb-3" style="border-radius: 10px;">
+                        <h5 href="#" id="complete-order" class="nav-link side-bar-nav m-0">
+                            <iconify-icon icon="lsicon:order-done-filled" class="text-white"></iconify-icon>
+                            <span class="ms-3 fw-bold ">
+                                Đơn hoàn thành
+                            </span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-bar-right">
+                <div class="side-bar-right--content">
+                    <!-- hiển thị thời gian thực -->
+                    <div class="side-bar-right-title w-100 d-flex pt-3 pe-2">
+                        <div class="w-100 real-time d-flex align-items-center justify-content-between">
+                            <div class="d-flex">
+                                <div class="d-flex justify-content-center align-items-center ps-4">
+                                    <iconify-icon icon="at-icons:cube" width="50" height="50" style="color: white;" class="badge-custom"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="fs-3 text-white ms-3 m-0">Phiên bản game hiện tại</p>
+                                    <div class="badge-custom d-flex justify-content-center ms-3 w-50">
+                                        <p id="currentVersion" class="fs-6 m-0 text-start"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="real-time"></div>
+                        </div>
+                    </div>
+
+                    <!-- hiển thị các đơn đang cày -->
+                    <div id="order-overview" class="order-overview pt-2 pe-2"></div>
+                    <div id="display" class="text-white"></div>
+                    <div class="wrapper-custom wrapper-scroll mt-3">
+                        <div class="wrapper-order">
+                            <div id="list-order" class="row fw-bold mt-1 text-white"></div>
+                        </div>
+                    </div>
+                    <div id="pagination" class="row pb-2 pt-2 text-white justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Create Order-->
+    <div id="modal-create-order"></div>
+
+    <!-- Modal Detail Order-->
+    <div id="modal-detail-order"></div>
+
+    <!-- Modal User Information-->
+    <div id="modal-user-information"></div>
+
+    <!-- Modal Detail Customer-->
+    <div id="modal-detail-customer"></div>
+
+    <!-- Modal Delete Order-->
+    <div id="modal-delete-order"></div>
+
+    <!-- Modal Update Version-->
+    <div id="modal-update-version"></div>
+
+    <!-- Modal Update State Purchase -->
+    <div id="modal-update-state-purchase"></div>
+
+    <!-- Modal Add Content And Map -->
+
+    <div id="modal-add-content-quest"></div>
+
+    <div id="toast-custom" class="toast-custom text-white text-center
+    fw-bold p-2 d-flex justify-content-center"></div>
+</body>
+
+</html>

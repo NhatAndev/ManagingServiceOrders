@@ -1,0 +1,76 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Background Gradient Đen + Magenta + Tím Neon */
+    background: radial-gradient(circle at center, #2a082b 0%, #120417 50%, #08020a 100%);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chữ tiêu đề chính */
+.loading-title {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+/* Trạng thái chữ chưa sáng */
+.loading-title span {
+    color: rgba(255, 255, 255, 0.15);
+    text-shadow: none;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+    display: inline-block;
+}
+
+/* Dấu cách không bị co hẹp */
+.loading-title span.space {
+    width: 0.3em;
+}
+
+/* 1. Trạng thái sáng của chữ "Managing" (Tím Neon) */
+.loading-title span.purple-neon.active {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px #c084fc,
+        0 0 20px #a855f7,
+        0 0 40px rgba(168, 85, 247, 0.8);
+}
+
+/* 2. Trạng thái sáng của chữ "Service" (Magenta Neon) */
+.loading-title span.magenta-neon.active {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px #d946ef,
+        0 0 20px #c026d3,
+        0 0 40px rgba(192, 38, 211, 0.8);
+}
+
+/* 3. Trạng thái sáng của chữ "Order" (Hồng Neon) */
+.loading-title span.pink-neon.active {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px #f472b6,
+        0 0 20px #ec4899,
+        0 0 40px rgba(236, 72, 153, 0.8);
+}
+
+/* Số phần trăm bên dưới (Pha màu magenta/hồng) */
+.percent-text {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #d946ef;
+    text-shadow: 0 0 12px rgba(217, 70, 239, 0.6);
+    letter-spacing: 2px;
+}

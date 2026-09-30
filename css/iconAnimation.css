@@ -1,0 +1,31 @@
+.btn-cancel-order .button-icon-cancel,
+.btn-save-order .button-icon-save,
+.btn-save-order .button-icon-delete,
+.btn-save-order .button-icon-update-version
+{
+    transition: 0.2s ease-in;
+}
+
+.btn-cancel-order:hover .button-icon-cancel,
+.icon-down,
+.btn-close-modal:hover
+{
+    transform: rotate(180deg);
+}
+
+.btn-save-order:hover .button-icon-save
+{
+    transform: translate(5px, -5px);
+}
+
+.btn-save-order:hover .button-icon-delete,
+.btn-save-order:hover .button-icon-update-version
+{
+    transform: scale(1.2);
+}
+
+.btn-save-order:hover .button-icon-update-state,
+.btn-save-order:hover .button-icon-update-state
+{
+    transform: scale(1.2);
+}
