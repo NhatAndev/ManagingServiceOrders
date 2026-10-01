@@ -650,8 +650,14 @@ export function renderServicePrice() {
                         </div>
                     </div>
                     <div class="map-service ps-0 m-0 col-7">
-                        <div class="map-title text-center">
+                        <div class="map-title gap-5 text-center">
                             <span class="m-0">Các khu vực chạy map hiện đang có</span>
+                            <span id="edit-map" class="cursor p-2 bg-content d-flex gap-2 rounded-pill"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEditMap">
+                                <iconify-icon icon="gis:map-options" class="d-flex"></iconify-icon>
+                                <span>Chỉnh sửa số lượng map</span>
+                            </span>
                         </div>
                         <div class="row">
                             <span class="col m-0 p-3 align-items-center d-flex justify-content-center">

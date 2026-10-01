@@ -633,6 +633,100 @@ document.querySelector('#modal-add-content-quest')
     </div>
 `;
 
+document.querySelector('#modal-detail-customer')
+    .innerHTML = `
+    <div class="modal fade" id="modalCustomerId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-11 ">
+                                <h5 class="modal-title fw-bold text-center text-uppercase" id="modalUserInformation">
+                                    Thông tin khách hàng
+                                </h5>
+                            </div>
+                            <div class="col-1">
+                                <div type="button" class="fs-4 btn-close-modal d-flex align-items-center justify-content-center" data-bs-dismiss="modal">
+                                    <iconify-icon icon="fa:close"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="customer-detail" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+`;
+
+document.querySelector('#modal-edit-map')
+    .innerHTML = `
+    <div class="modal fade" id="modalEditMap" tabindex="-1" role="dialog" aria-labelledby="modalEditMap"
+        aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-11 ">
+                                <h5 class="modal-title fw-bold text-center text-uppercase" id="modalUserInformation">
+                                    form sửa map
+                                </h5>
+                            </div>
+                            <div class="col-1">
+                                <div type="button" class="fs-4 btn-close-modal d-flex align-items-center justify-content-center" data-bs-dismiss="modal">
+                                    <iconify-icon icon="fa:close"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form id="form-edit-map" class="d-flex row">
+                            <div class="col-6">
+                                <div class="mb-1">
+                                    <label for="" class="form-label">Nhập tên map cần sửa: </label>
+                                    <div class="input-wrapper">
+                                        <h4 class="icon-form">
+                                            <iconify-icon icon="lucide:map-pin-pen"></iconify-icon>
+                                        </h4>
+                                        <input type="text" name="" id="inputEdit" class="form-control" placeholder=""
+                                        aria-describedby="helpId" />
+                                    </div>
+                                    <small id="errEdit" class="text-danger fw-bold"></small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-1">
+                                    <label for="" class="form-label">Số lượng map: </label>
+                                    <div class="input-wrapper">
+                                        <h4 class="icon-form">
+                                            <iconify-icon icon="iconmind:map-step-outline-bold"></iconify-icon>
+                                        </h4>
+                                        <input type="text" name="" id="inputEditMapCount" class="form-control" placeholder=""
+                                        aria-describedby="helpId" />
+                                    </div>
+                                    <small id="errEditMapCount" class="text-danger fw-bold"></small>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mb-3">
+                    <button id="btn-edit-map" type="button"
+                        class="fw-bold btn ms-3 btn-save-order rounded-pill text-uppercase
+                        d-flex justify-content-center align-items-center">
+                        <span class="m-0 p-0">Xác nhận</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+`
+
 
 document.querySelectorAll('.modal').forEach(modal => {
     modal.addEventListener('hide.bs.modal', () => {

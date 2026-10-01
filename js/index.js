@@ -25,14 +25,12 @@ import {
     initIdResetValue,
     initServer,
     initContent,
-    initBossHolo,
 } from "./init.js";
 import {
     validLevel,
     validUID,
     validEmptyValue,
     validInput,
-    validAvailableArea
 } from "./valid.js";
 
 const initValue = () => {
@@ -52,8 +50,8 @@ if (getData('initWuwa') === null)
 if (getData('content') === null)
     saveData('content', initContent());
 
-if (getData('map') === null)
-    saveData('map', initMap());
+if (getData('listMap') === null)
+    saveData('listMap', initMap());
 
 export function showErrInputById(errId, msg) {
     document.querySelector(errId).innerText = msg
@@ -294,7 +292,7 @@ document.querySelector('#display').addEventListener('click', e => {
         );
     }
     if (current.closest('#list-price-service')) {
-        const listMap = getData('map');
+        const listMap = getData('listMap');
         const nameMap = listMap.filter(item => item.area !== "không");
         saveData('listMap', nameMap);
         let initListContent = getData('content');
@@ -957,3 +955,31 @@ export function closeListContent(iconContainer, icon, listContainer) {
     document.querySelector(listContainer)
         .classList.remove('req-order', 'animate__rubberB');
 }
+
+document.querySelector("#btn-edit-map").addEventListener('click', () => {
+    let inputEditMap = document.querySelector("#inputEdit").value;
+    let inputEditMapCount = document.querySelector('#inputEditMapCount').value;
+    let listMap = getData('listMap');
+    let isValid = true;
+
+    [
+        {input: "#inputEdit", err: "#errEdit"},
+        {input: "#inputEditMapCount", err: "#errEditMapCount"}
+    ].forEach(el => {
+        if(!validEmptyValue(el.input, el.err)) isValid = false;
+    })
+
+    if(!isValid) return;
+
+    listMap.forEach(map => {
+        if(map.area === inputEditMap)
+            map.totalMap = inputEditMapCount;
+        else if(!Number(inputEditMapCount)) isExistMap = false;
+    })
+    saveData('listMap', listMap);
+        
+
+    document.querySelector('#form-edit-map').reset();
+    showNotice("Cập nhật map thành công");
+    hideModal('#modalEditMap');
+});

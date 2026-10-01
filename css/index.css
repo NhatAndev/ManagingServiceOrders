@@ -1,27 +1,12 @@
 :root {
-    /* 1. Total Task — Slate Blue */
     --total-task: #210B2C;
-
-    /* 2. Progress Task — Muted Amber */
     --progress-task: #55286F;
-
-    /* 3. Complete Task — Deep Emerald */
     --complete-task: #AE759F;
-
-    /* 4. Complete Rate — Teal */
     --complete-rate: #BC96E6;
-
-    /* 5. Total Customer — Muted Plum */
     --total-customer: #AE759F;
-
-    /* 6. Max Price — Antique Gold */
     --max-price: #55286F;
-
-    /* 7. Total Money — Deep Indigo */
     --total-money: #BC96E6;
 }
-
-
 
 * {
     padding: 0;
@@ -603,6 +588,12 @@ body {
     border: 1px solid rgba(0, 255, 0, 0.4);
 }
 
+#edit-map:hover
+{
+    filter: brightness(1.3);
+    cursor: pointer;
+    animation: pushUp 0.03s forwards;
+}
 
 .btn-update-version:hover
 {

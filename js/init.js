@@ -334,7 +334,9 @@ export function initIdRemoveError() {
         "#errContent",
         "#errContentPrice",
         "#errContentUnit",
-        "#errIconContent"
+        "#errIconContent",
+        "#errEdit",
+        "#errEditMapCount"
     ];
 
     return listIdRemoveError;
