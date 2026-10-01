@@ -20,6 +20,7 @@ body {
     background-color: #0D0F12;
     overflow-y: hidden;
     overflow-x: hidden;
+    /* min-height: 100vh; */
 }
 
 .side-bar-left {
@@ -38,13 +39,14 @@ body {
 .side-bar-right {
     width: 80%;
     padding-left: 10px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: absolute;
     right: 0;
 }
 
 .side-bar-right--content {
     width: 100%;
+    /* min-height: 100vh; */
     height: auto;
     margin-right: auto;
 }
@@ -383,7 +385,7 @@ body {
 .wrapper-custom
 {
     overflow: auto;
-    height: 380px;
+    height: calc(100vh - 350px);
     overflow-x: hidden;
 }
 
