@@ -94,8 +94,8 @@ export function renderProgressListOrder(ol) {
                     <div class="row">
                         <div class="col-6 d-flex justify-content-center">
                             <button data-id="${ol.odc}"
-                                class="fw-bold rounded-pill d-flex align-items-center gap-2 w-100 p-2 btn btn-complete-order text-white">
-                                <span class="ms-3 p-0">
+                                class="fw-bold rounded-pill d-flex align-items-center justify-content-center gap-2 w-100 p-2 btn btn-complete-order text-white">
+                                <span class="p-0">
                                     <iconify-icon icon="iconmind:order-confirm-outline-bold" class="d-flex" width="24px"></iconify-icon>
                                 </span>
                                 <span class="m-0 p-0">Hoàn thành</span>
@@ -103,9 +103,9 @@ export function renderProgressListOrder(ol) {
                         </div>
                         <div class="col-6 d-flex justify-content-center">
                             <button data-id="${ol.odc}"
-                                class="rounded-pill d-flex align-items-center gap-2 p-2 w-100    btn btn-detail-order text-white fw-bold"
+                                class="rounded-pill d-flex align-items-center justify-content-center gap-2 p-2 w-100 btn btn-detail-order text-white fw-bold"
                                 data-bs-toggle="modal" data-bs-target="#modalDetailId">
-                                <span class="ms-3 p-0">
+                                <span class="p-0">
                                     <iconify-icon icon="flowbite:eye-outline" class="d-flex" width="24px"></iconify-icon>
                                 </span>
                                 <span class="m-0 p-0">Chi tiết đơn</span>
@@ -166,8 +166,8 @@ export function renderCompleteListOrder(ol) {
                         <button data-id="${ol.odc}"
                             class="rounded-pill w-50 gap-2 p2 d-flex align-items-center justify-content-center btn btn-detail-order text-white fw-bold"
                             data-bs-toggle="modal" data-bs-target="#modalDetailId">
-                            <span class="ms-3 p-0">
-                                <iconify-icon icon="flowbite:eye-outline" class="d-flex" width="24px"></iconify-icon>
+                            <span class="p-0">
+                                <iconify-icon icon="flowbite:eye-outline" class="d-flex justify-content-center" width="24px"></iconify-icon>
                             </span>
                             <span>Chi tiết đơn</span>
                         </button>
@@ -540,9 +540,9 @@ export function renderListCustomer(cl) {
                     </div>
                     <div class="row d-flex justify-content-center">
                         <button data-id="${cl.customerId}"
-                            class="rounded-pill d-flex align-items-center gap-2 p-2 w-50 btn btn-detail-customer text-white fw-bold"
+                            class="rounded-pill d-flex align-items-center justify-content-center gap-2 p-2 w-50 btn btn-detail-customer text-white fw-bold"
                             data-bs-toggle="modal" data-bs-target="#modalCustomerId">
-                            <span class="ms-3 p-0">
+                            <span class="p-0">
                                 <iconify-icon icon="flowbite:eye-outline" class="d-flex" width="24px"></iconify-icon>
                             </span>
                             <span class="m-0 p-0">Chi tiết khách</span>

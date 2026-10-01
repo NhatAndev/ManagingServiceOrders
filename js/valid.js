@@ -42,7 +42,7 @@ export function validSever() {
 }
 
 export function validAvailableArea() {
-    const areas = getData('map');
+    const areas = getData('listMap');
     let area = "";
     let mapCount = "";
     let isValid = true;
@@ -71,7 +71,6 @@ export function validAvailableArea() {
         }
         return removeErrById('#errMapCount');
     }
-
 
     if(!validArea(areas))
         isValid = false;
@@ -109,6 +108,6 @@ export function validInput()
         validEmptyValue('#input-end-game', '#errEndGame'),
         validPayMoney(),
     ];
-
+    
     return validators.every(Boolean);
 }

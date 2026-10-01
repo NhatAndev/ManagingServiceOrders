@@ -20,7 +20,6 @@ body {
     background-color: #0D0F12;
     overflow-y: hidden;
     overflow-x: hidden;
-    /* min-height: 100vh; */
 }
 
 .side-bar-left {
@@ -39,14 +38,12 @@ body {
 .side-bar-right {
     width: 80%;
     padding-left: 10px;
-    /* min-height: 100vh; */
     position: absolute;
     right: 0;
 }
 
 .side-bar-right--content {
     width: 100%;
-    /* min-height: 100vh; */
     height: auto;
     margin-right: auto;
 }
@@ -368,12 +365,14 @@ body {
 }
 
 .btn-pagination {
-    background: linear-gradient(135deg, #000272, #341677);
+    border-radius: 20px;
+    background-color: #8A2BE2;
 }
 
 
 .btn-pagination:hover {
-    background: linear-gradient(135deg, #000bd4, #75239b);
+    background-color: #8A2BE2;
+    filter: brightness(1.2);
 }
 
 .wrapper-order {
