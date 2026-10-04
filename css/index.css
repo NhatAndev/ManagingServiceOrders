@@ -545,6 +545,15 @@ body {
     min-height: 200px;
 }
 
+.text-ellipsis
+{
+    text-overflow: ellipsis;
+    max-width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
 .badge-price-order
 {
     background: rgba(168, 85, 247, 0.1);

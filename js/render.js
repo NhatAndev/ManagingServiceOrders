@@ -1,4 +1,5 @@
 import { calculatePriceOrder } from "./index.js";
+import { getData } from "./storage.js";
 export function renderHomePage() {
     return `
         <div class="d-flex mt-3 justify-content-between align-items-center">
@@ -51,6 +52,13 @@ export function renderProgressListOrder(ol) {
         :
         `<i class="bi bi-check-circle me-1"></i>`
 
+    let listCustomer = getData('listCustomer');
+    let customer = null;
+    listCustomer.forEach(el => {
+        if(Number(el.uid) === Number(ol.uid))
+            customer = el;
+    })
+
     let html = "";
 
     html += `
@@ -58,8 +66,13 @@ export function renderProgressListOrder(ol) {
             <div class="card cursor card-order text-start">
                 <div class="card-body">
                     <div class="d-flex justify-content-between pb-2">
-                        <div class="badge-price-order">
-                            ${calculatePriceOrder(ol).toLocaleString(0)}đ
+                        <div class="d-flex gap-2">
+                            <div class="text-ellipsis badge-price-order">
+                                #${ol.odc}
+                            </div>
+                            <div class="badge-price-order">
+                                ${calculatePriceOrder(ol).toLocaleString(0)}đ
+                            </div>
                         </div>
                         <div class="">
                             <div class="state-purchase ${currentStateBg}">
@@ -76,7 +89,7 @@ export function renderProgressListOrder(ol) {
                             <div>
                                 <div class="pt-3">
                                     <div class="mb-1">
-                                        Mã đơn: #${ol.odc}
+                                        Name: ${customer.name}
                                     </div>
                                     <div class="mb-1">
                                         UID: ${ol.uid}
@@ -85,7 +98,7 @@ export function renderProgressListOrder(ol) {
                                         Level: ${ol.level}
                                     </div>
                                     <div>
-                                        Sever: ${ol.sever}
+                                        Server: ${ol.sever}
                                     </div>
                                 </div>
                             </div>
@@ -130,8 +143,13 @@ export function renderCompleteListOrder(ol) {
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="d-flex justify-content-between pb-2">
-                            <div class="badge-price-order">
-                                ${calculatePriceOrder(ol).toLocaleString(0)}đ
+                            <div class="d-flex gap-2">
+                                <div class="text-ellipsis badge-price-order">
+                                    #${ol.odc}
+                                </div>
+                                <div class="badge-price-order">
+                                    ${calculatePriceOrder(ol).toLocaleString(0)}đ
+                                </div>
                             </div>
                             <div class="">
                                 <div class="state-purchase state-purchase-yes">
