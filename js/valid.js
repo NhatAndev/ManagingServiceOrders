@@ -84,7 +84,10 @@ export function validAvailableArea() {
     }
 
     if(!validArea(areas))
+    {
         isValid = false;
+        return;
+    }
     if(!validMapCount(areas))
         isValid = false;
     
