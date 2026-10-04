@@ -62,9 +62,20 @@ export function validAvailableArea() {
 
     function validMapCount(areas) {
         const inputMapCount = document.querySelector('#inputMapCount').value;
+        let validAreaMapCount = areas.find(ar => ar.area === area && Number(inputMapCount) <= ar.totalMap);
 
         if (inputMapCount === "") return showErrInputById('#errMapCount', 'Chưa chọn số lượng map');
-        else if (!areas.find(ar => ar.area === area && Number(inputMapCount) <= ar.totalMap)) return showErrInputById('#errMapCount', 'Số lượng map không phù hợp với khu vực này');
+        else if (!validAreaMapCount)
+        {
+            let currentArea = ""
+            areas.forEach(el => {
+                if(el.area === area) currentArea = el;
+            })
+            
+            return showErrInputById('#errMapCount', `Khu vực ${currentArea.area} chỉ có tối đa ${currentArea.totalMap} map`);
+        }
+        else if (Number(inputMapCount) === 0)
+            return showErrInputById("#errMapCount", "Không được nhập số lượng map là 0")
         else {
             mapCount = inputMapCount;
             res = areas.find(ar => ar.area === area && mapCount <= ar.totalMap);

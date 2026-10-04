@@ -100,9 +100,10 @@ export function initAvt() {
         "../images/avt-order/Zani.webp",
         "../images/avt-order/Zhezhi.webp",
         "../images/avt-order/Qingxiao.webp",
-        "../images/avt-order/Jingran.webp"
+        "../images/avt-order/Jingran.webp",
+        "../images/avt-order/Hsin.webp",
+        "../images/avt-order/Suoming.webp"
     ]
-
     const index = Math.floor(Math.random() * avt.length);
 
     return avt[index];

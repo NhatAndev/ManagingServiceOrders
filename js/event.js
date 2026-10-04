@@ -248,7 +248,7 @@ document.addEventListener('click', e => {
         showNotice('Thêm content thành công');
     }
     if (e.target.closest('.btn-save-form--map')) {
-        let listMap = getData('map') || [];
+        let listMap = getData('listMap') || [];
         let isValid = true;
         const formMaps = {
             area: document.querySelector('#input-map').value,
@@ -269,7 +269,7 @@ document.addEventListener('click', e => {
         if (!isValid) return;
 
         listMap.push(formMaps);
-        saveData('map', listMap);
+        saveData('listMap', listMap);
 
         showNotice('Thêm khu vực mới thành công');
         document.querySelector('#form-container').reset();

@@ -294,7 +294,7 @@ document.querySelector('#display').addEventListener('click', e => {
     if (current.closest('#list-price-service')) {
         const listMap = getData('listMap');
         const nameMap = listMap.filter(item => item.area !== "không");
-        saveData('listMap', nameMap);
+        saveData('map', nameMap);
         let initListContent = getData('content');
 
         document.querySelector('#list-order').innerHTML = renderServicePrice();
@@ -308,7 +308,7 @@ document.querySelector('#display').addEventListener('click', e => {
         document.querySelector('#content-container').innerHTML = html;
         document.querySelector('#pagination').innerHTML = "";
         pagination(
-            getData, 'listMap',
+            getData, 'map',
             renderListMap, '.map-content', '.map-pagination',
             { pageSlide: 6, returnHead: false, btnPrev: 'btn-prev-map', btnNext: 'btn-next-map', slidePage: 'slideMap' }
         );
