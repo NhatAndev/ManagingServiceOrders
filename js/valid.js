@@ -74,7 +74,7 @@ export function validAvailableArea() {
             
             return showErrInputById('#errMapCount', `Khu vực ${currentArea.area} chỉ có tối đa ${currentArea.totalMap} map`);
         }
-        else if (Number(inputMapCount) === 0)
+        else if (area !== "không" && Number(inputMapCount) === 0)
             return showErrInputById("#errMapCount", "Không được nhập số lượng map là 0")
         else {
             mapCount = inputMapCount;

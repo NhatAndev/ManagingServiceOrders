@@ -679,14 +679,19 @@ document.querySelector('#btn-delete-order').addEventListener('click', () => {
 
     let isValid = true;
     let isNumberId = true;
+    let isExist = getData('initWuwa').length !== 0 ? true : false;
 
     const inputDeletedId = document.querySelector('#inputDeleteId').value;
     const listDeletedId = inputDeletedId.split(', ');
-    let isExist = getData('initWuwa') ? true : false;
+    let errOrder = [];
+    
 
     listDeletedId.forEach(el => {
-        if (!Number(el)) {
-            isNumberId = false;
+        if (!Number(el)) isNumberId = false;
+        else if (isExist && !getData('initWuwa').find(item => Number(item.odc) === Number(el)))
+        {
+            errOrder.push(el);
+            isValid = false;
         }
     })
 
@@ -694,8 +699,9 @@ document.querySelector('#btn-delete-order').addEventListener('click', () => {
         showErrInputById('#errDelete', 'Chưa điền ID cần xóa');
         isValid = false;
     }
-    else if (isExist && !getData('initWuwa').find(item => Number(item.odc) === Number(inputDeletedId))) {
-        showErrInputById('#errDelete', `Không tìm thấy đơn phù hợp`);
+    else if(isExist && errOrder.length !== 0)
+    {
+        showErrInputById("#errDelete", `Không tìm thấy đơn ${errOrder}`);
         isValid = false;
     }
     else if (!isNumberId) {
@@ -795,6 +801,7 @@ document.querySelector('#currentVersion')
 
 document.querySelector('#btn-update-version')
     .addEventListener('click', () => {
+        let regexVersion = /^\d+[.]\d{1}$/
         let isValid = true;
         const inputCurrentVersion = document.querySelector('#inputCurrentVersion').value;
 
@@ -802,8 +809,13 @@ document.querySelector('#btn-update-version')
             validEmptyValue('#inputCurrentVersion', '#errCurrentVersion');
             isValid = false;
         }
+        else if(!regexVersion.test(inputCurrentVersion))
+        {
+            showErrInputById("#errCurrentVersion", `${inputCurrentVersion} không phải là định dạng hợp lệ, phiên bản hợp lệ có dạng x.x`);
+            isValid = false;
+        }
         else if (Number(inputCurrentVersion) < getData('currentVersion')) {
-            showErrInputById('#errCurrentVersion', 'Phiên bản hiện tại không hợp lệ');
+            showErrInputById('#errCurrentVersion', `Đã hết thời gian phiên bản ${inputCurrentVersion}`);
             isValid = false;
         }
 
@@ -822,6 +834,7 @@ document.querySelector('#btn-update-version')
     });
 
 document.querySelector('#update-version').addEventListener('click', () => {
+    document.querySelector('#formVersion').reset();
     removeErrById('#errCurrentVersion');
 });
 

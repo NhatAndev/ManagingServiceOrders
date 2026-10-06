@@ -339,7 +339,6 @@ body {
 
 .btn-append-order:hover {
     filter: brightness(1.4);
-    animation: pushUp 0.03s forwards;
 }
 
 .toast-custom {
@@ -440,7 +439,6 @@ body {
 
 .btn-remove-order:hover {
     filter: brightness(1.2);
-    animation: pushUp 0.03s forwards;
 }
 
 .modal-content {
@@ -609,7 +607,6 @@ body {
 {
     filter: brightness(1.1);
     cursor: pointer;
-    animation: pushUp 0.03s forwards;
 }
 
 .btn-update:hover
@@ -924,7 +921,7 @@ input[type="radio"]:checked {
 
 .badge-title-update:hover
 {
-    background: linear-gradient(135deg, #fbbf24, #fb923c);
+    filter:brightness(1.2);
     box-shadow: 0 0 16px rgba(249, 115, 22, 0.4);
 }
 
